@@ -1,15 +1,14 @@
 package tech.jxson;
 
-import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import okhttp3.OkHttpClient;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import tech.jxson.services.OpenCloud;
-import tech.jxson.services.UserService;
-import tech.jxson.users.UserResponse;
+import tech.jxson.services.Users;
 import tech.jxson.util.SLF4J;
 import tech.jxson.util.SLF4J.logModes;
 
@@ -21,28 +20,20 @@ public class Client {
     Dotenv env = Dotenv.load();
     Client client = new Client();
     client.setApiKey(env.get("API_KEY"));
-    // try {
-    //   Response<UserResponse> res = client.openCloud().getUser(1).execute();
-    //   if (res.isSuccessful()) {
-    //     UserResponse user = res.body();
-    //     if (user == null) { System.out.println("Null"); }
-    //     System.out.println(user.about + " | " + user.id);
-    //   }
-    // } catch (IOException e) {
-    //   e.printStackTrace();
-    // }
+    client.setCookie(env.get("COOKIE"));
   }
-  private final UserService userService;
   private final HttpInterceptor httpInterceptor;
   private final OpenCloud openCloud;
+  private final Users oldUsers;
 
   public Client() {
-    this.userService = null;
     this.httpInterceptor = new HttpInterceptor();
-    OkHttpClient httpClient = new OkHttpClient().newBuilder().addInterceptor(httpInterceptor).build();
+    OkHttpClient httpClient = new OkHttpClient().newBuilder().addInterceptor(httpInterceptor).connectTimeout(Duration.ofSeconds(10)).readTimeout(Duration.ofSeconds(10)).writeTimeout(Duration.ofSeconds(10)).build();
 
     Retrofit cloudApi = new Retrofit.Builder().baseUrl("https://apis.roblox.com").client(httpClient).addConverterFactory(GsonConverterFactory.create()).build();
     this.openCloud = cloudApi.create(OpenCloud.class);
+    Retrofit usersApi = new Retrofit.Builder().baseUrl("https://users.roblox.com").client(httpClient).addConverterFactory(GsonConverterFactory.create()).build();
+    this.oldUsers = usersApi.create(Users.class);
   }
 
   public void setApiKey(String apiKey) {
@@ -55,7 +46,8 @@ public class Client {
     SLF4J.Log("Set cookie successfully", logModes.INFO);
   }
 
-  public UserService users() { return this.userService; }
+  /*** This uses the OLD users endpoint (<code>users.roblox.com</code>) */
+  public Users users() { return this.oldUsers; }
   public OpenCloud openCloud() { return this.openCloud; }
 
 
