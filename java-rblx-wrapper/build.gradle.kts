@@ -7,7 +7,8 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
-    application
+    `java-library`
+    id("maven-publish")
 }
 
 repositories {
@@ -24,8 +25,9 @@ dependencies {
     //retrofit impls
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
-    implementation("io.github.cdimascio:dotenv-java:3.0.0")
-    implementation("ch.qos.logback:logback-classic:1.5.16")
+    api("io.github.cdimascio:dotenv-java:3.0.0")
+    api("org.slf4j:slf4j-api:2.0.12")
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.16")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -35,11 +37,14 @@ java {
     }
 }
 
-application {
-    mainClass = "tech.jxson.Client"
+tasks.named<Test>("test") {
+    useJUnitPlatform()
 }
 
-tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
 }

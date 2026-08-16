@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = "Roblox-Java-Wrapper"
-include("app")
+include("java-rblx-wrapper")
