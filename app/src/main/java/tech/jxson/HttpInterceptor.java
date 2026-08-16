@@ -21,10 +21,14 @@ public class HttpInterceptor implements Interceptor {
       if (apiKey == null || apiKey.trim().isEmpty()) {
         throw new IllegalStateException("API key is not specified- specify one using Client.setApiKey()");
       }
-    }
-    if (!apiKey.isEmpty()) { builder.header("x-api-key", apiKey); }
-    if (cookie.startsWith(".ROBLOSECURITY=") && !apiKey.isEmpty()) { builder.header("Cookie", cookie); }
-
+      if (!apiKey.isEmpty()) { builder.header("x-api-key", apiKey); } 
+    } else { 
+      if (cookie == null || cookie.trim().isEmpty()) {
+        throw new IllegalStateException("A cookie is required for non Open Cloud requests");
+      }
+      if (cookie.startsWith("_|WARNING:-DO-NOT-SHARE-THIS.") && !apiKey.isEmpty()) { builder.header("Cookie", cookie); }
+     }
+    builder.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
     Request newReq = builder.build();
     return chain.proceed(newReq);
   }
