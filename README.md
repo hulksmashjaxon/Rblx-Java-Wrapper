@@ -22,3 +22,15 @@ try { // example method!
   e.printStackTrace();
 }
 ```
+## SLF4J Logging
+A custom package for handling SLF4J comes with Rblx-Java-Wrapper. You can use it as so:
+```java
+import tech.jxson.util.SLF4J;
+import tech.jxson.util.SLF4J.logModes; // or alternatively, import tech.jxson.util.SLF4J.*
+
+public class Main {
+  public static void main(String[] args) {
+    SLF4J.Log("Hello, world!" logModes.INFO);
+  }
+}
+```
