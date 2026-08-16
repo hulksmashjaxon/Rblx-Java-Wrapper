@@ -16,7 +16,7 @@ repositories {
     mavenCentral()
 }
 group = "tech.jxson"
-version = "1.0.0"
+version = "0.0.1"
 
 dependencies {
     testImplementation(libs.junit.jupiter)
