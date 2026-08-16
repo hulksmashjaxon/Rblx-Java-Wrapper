@@ -1,5 +1,5 @@
 # Rblx-Java-Wrapper
-**An API wrapper library for Roblox**, made in and support for Java. 
+**An API wrapper library for Roblox**, made in and for Java. 
 
 ## Why?
 I made this because I could not find any Roblox API wrapper for Java- the only one was deprecated six years ago.
