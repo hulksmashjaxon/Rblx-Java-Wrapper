@@ -5,5 +5,5 @@
 build
 
 .env
-
-/app/bin
+java-rblx-wrapper/bin
+java-rblx-wrapper/src/test
