@@ -16,7 +16,7 @@ repositories {
     mavenCentral()
 }
 group = "tech.jxson"
-version = "0.0.1"
+version = "1.0.0-alpha"
 
 dependencies {
     testImplementation(libs.junit.jupiter)
@@ -35,6 +35,7 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
+    withSourcesJar()
 }
 
 tasks.named<Test>("test") {
@@ -45,6 +46,8 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
+            groupId = "tech.jxson"
+            artifactId = "rblx-java-wrapper"
         }
     }
 }
