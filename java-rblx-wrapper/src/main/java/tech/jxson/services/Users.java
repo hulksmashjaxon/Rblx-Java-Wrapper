@@ -1,5 +1,7 @@
 package tech.jxson.services;
 
+import java.io.IOException;
+
 import org.jspecify.annotations.Nullable;
 
 import retrofit2.Call;
@@ -7,16 +9,18 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
-import tech.jxson.users.GetUsersByUsernames.GetUsersByUsernameData;
-import tech.jxson.users.SearchForUsersByKeyword.SearchForUsersByKeywordData;
-import tech.jxson.users.GetUsersByUsernames.GetUsersByUsernameBody;
+import tech.jxson.attributes.RequiresCookie;
+import tech.jxson.endpoints.users.GetUsersByUsernames.GetUsersByUsernameBody;
+import tech.jxson.endpoints.users.GetUsersByUsernames.GetUsersByUsernameData;
+import tech.jxson.endpoints.users.SearchForUsersByKeyword.SearchForUsersByKeywordData;
 
 public interface Users {
   /*** 
-   * @param request - {@link tech.jxson.users.GetUsersByUsernames.GetUsersByUsernameBody}
+   * @param request - {@link tech.jxson.endpoints.GetUsersByUsernames.GetUsersByUsernameBody}
    * 
    * @return {@link retrofit2.OkHttpCall}
    */
+  @RequiresCookie
   @POST("/v1/usernames/users")
   Call<GetUsersByUsernameData> getUsersByUsernames(@Body GetUsersByUsernameBody request);
   /***
@@ -26,6 +30,9 @@ public interface Users {
    * @param cursor - The paging cursor for the previous or next page
    * @return {@link retrofit2.OkHttpCall}
   */
+  @RequiresCookie
   @GET("/v1/users/search")
-  Call<SearchForUsersByKeywordData> getUsersByKeyword(@Query("keyword") String keyword, @Query("sessionId") @Nullable String sessionId, @Query("limit") @Nullable Integer limit, @Query("cursor") @Nullable String cursor);
+  Call<SearchForUsersByKeywordData> getUsersByKeyword(@Query("keyword") String keyword,
+      @Query("sessionId") @Nullable String sessionId, @Query("limit") @Nullable Integer limit,
+      @Query("cursor") @Nullable String cursor) throws IllegalStateException, IOException;
 } 
