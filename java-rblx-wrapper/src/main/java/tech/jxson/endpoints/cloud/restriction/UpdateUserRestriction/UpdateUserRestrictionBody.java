@@ -1,4 +1,4 @@
-package tech.jxson.users.cloud.UpdateUserRestriction;
+package tech.jxson.endpoints.cloud.restriction.UpdateUserRestriction;
 
 import java.util.List;
 

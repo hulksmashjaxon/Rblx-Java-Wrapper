@@ -1,4 +1,4 @@
-package tech.jxson.users;
+package tech.jxson.endpoints;
 
 import java.util.Date;
 

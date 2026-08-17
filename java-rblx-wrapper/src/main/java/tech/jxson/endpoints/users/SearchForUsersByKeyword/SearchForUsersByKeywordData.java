@@ -1,4 +1,4 @@
-package tech.jxson.users.SearchForUsersByKeyword;
+package tech.jxson.endpoints.users.SearchForUsersByKeyword;
 
 import java.util.List;
 

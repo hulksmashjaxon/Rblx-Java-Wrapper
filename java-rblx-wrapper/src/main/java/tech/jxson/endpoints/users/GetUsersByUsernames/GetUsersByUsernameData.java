@@ -1,4 +1,4 @@
-package tech.jxson.users.GetUsersByUsernames;
+package tech.jxson.endpoints.users.GetUsersByUsernames;
 
 import java.util.List;
 

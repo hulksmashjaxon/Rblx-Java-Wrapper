@@ -1,12 +1,15 @@
-package tech.jxson.users.cloud.UpdateUserRestriction;
+package tech.jxson.endpoints.cloud.restriction.GetUserRestriction;
 
 import java.util.List;
 
-public class UpdateUserRestrictionData {
+import com.google.gson.annotations.SerializedName;
+
+public class GetUserRestrictionData {
   public String path;
   public String updateTime;
   public String user;
-  public List<gameJoinRestriction> gameJoinRestriction;
+  @SerializedName("gameJoinRestriction")
+  public List<gameJoinRestriction> restriction;
 
   public static class gameJoinRestriction {
     public Boolean active;
