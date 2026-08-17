@@ -1,4 +1,6 @@
 # Rblx-Java-Wrapper
+[![](https://jitpack.io/v/hulksmashjaxon/Rblx-Java-Wrapper.svg)](https://jitpack.io/#hulksmashjaxon/Rblx-Java-Wrapper)
+
 **An API wrapper library for Roblox**, made in and for Java. 
 
 ## Why?
