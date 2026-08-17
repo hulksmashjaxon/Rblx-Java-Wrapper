@@ -11,8 +11,13 @@ plugins {
     id("maven-publish")
 }
 
+repositories {
+    mavenCentral()
+}
+
+
 group = "tech.jxson"
-version = "1.0.0-alpha"
+version = "1.0.2-alpha"
 
 dependencies {
     testImplementation(libs.junit.jupiter)
