@@ -46,9 +46,9 @@ COOKIE="12345"
 
 ## Installation
 This library has not yet been made available on Maven Central, however for now you can use JitPack.
-**Step 1:** Add the JitPack repository to your build file
+**Step 1:** Add the JitPack repository
 ```gradle
-  // .gradle
+  // settings.gradle
 	dependencyResolutionManagement {
 		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 		repositories {
@@ -58,7 +58,7 @@ This library has not yet been made available on Maven Central, however for now y
 	}
   ```
   ```kts
-  // .gradle.kts
+  // settings.gradle.kts
   	dependencyResolutionManagement {
 		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 		repositories {
@@ -81,13 +81,13 @@ This library has not yet been made available on Maven Central, however for now y
   ```gradle
   // .gradle
   	dependencies {
-	        implementation 'com.github.hulksmashjaxon:Rblx-Java-Wrapper:Tag'
+	        implementation 'com.github.hulksmashjaxon:Rblx-Java-Wrapper:v1.0.0-alpha'
 	}
   ```
   ```kts
   // .gradle.kts
     dependencies {
-	        implementation("com.github.hulksmashjaxon:Rblx-Java-Wrapper:Tag")
+	        implementation("com.github.hulksmashjaxon:Rblx-Java-Wrapper:v1.0.0-alpha")
 	}
   ```
   ```xml
@@ -95,6 +95,6 @@ This library has not yet been made available on Maven Central, however for now y
   	<dependency>
 	    <groupId>com.github.hulksmashjaxon</groupId>
 	    <artifactId>Rblx-Java-Wrapper</artifactId>
-	    <version>Tag</version>
+	    <version>v1.0.0-alpha</version>
 	</dependency>
   ```
