@@ -11,10 +11,6 @@ plugins {
     id("maven-publish")
 }
 
-repositories {
-    // Use Maven Central for resolving dependencies.
-    mavenCentral()
-}
 group = "tech.jxson"
 version = "1.0.0-alpha"
 
