@@ -32,12 +32,12 @@ jobs:
           ./gradlew dokkaGenerate
       - name: Nojekyll
         run: |
-          mkdir -p build/dokka/html
-          touch build/dokka/html/.nojekyll
+          mkdir -p docs
+          touch docs/.nokeyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build/dokka/html/'
+          path: 'docs/'
 
       - id: deployment
         uses: actions/deploy-pages@v4
