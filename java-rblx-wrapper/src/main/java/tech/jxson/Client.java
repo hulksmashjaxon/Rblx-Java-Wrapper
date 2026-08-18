@@ -2,7 +2,6 @@ package tech.jxson;
 
 import java.time.Duration;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -18,10 +17,7 @@ import tech.jxson.util.SLF4JUtil.logModes;
  */
 public class Client {
   public static void main(String[] args) {
-    Dotenv env = Dotenv.load();
-    Client client = new Client();
-    client.setApiKey(env.get("API_KEY"));
-    client.setCookie(env.get("COOKIE"));
+
   }
   private final HttpInterceptor httpInterceptor;
   private final OpenCloud openCloud;

@@ -1,5 +1,6 @@
 # Rblx-Java-Wrapper
 [![](https://jitpack.io/v/hulksmashjaxon/Rblx-Java-Wrapper.svg)](https://jitpack.io/#hulksmashjaxon/Rblx-Java-Wrapper)
+![](https://github.com/hulksmashjaxon/Rblx-Java-Wrapper/actions/workflows/gradle.yml/badge.svg)
 
 **An API wrapper library for Roblox**, made in and for Java. 
 
@@ -46,6 +47,8 @@ COOKIE="12345"
 
 ## Installation
 This library has not yet been made available on Maven Central, however for now you can use JitPack.
+Alternatively, go to [JitPack](https://jitpack.io/#hulksmashjaxon/Rblx-Java-Wrapper) and view the entire process there.
+
 **Step 1:** Add the JitPack repository
 ```gradle
   // settings.gradle
@@ -81,13 +84,13 @@ This library has not yet been made available on Maven Central, however for now y
   ```gradle
   // .gradle
   	dependencies {
-	        implementation 'com.github.hulksmashjaxon:Rblx-Java-Wrapper:v1.0.0-alpha'
+	        implementation 'com.github.hulksmashjaxon:Rblx-Java-Wrapper:v1.0.2-alpha'
 	}
   ```
   ```kts
   // .gradle.kts
     dependencies {
-	        implementation("com.github.hulksmashjaxon:Rblx-Java-Wrapper:v1.0.0-alpha")
+	        implementation("com.github.hulksmashjaxon:Rblx-Java-Wrapper:v1.0.2-alpha")
 	}
   ```
   ```xml
@@ -95,6 +98,6 @@ This library has not yet been made available on Maven Central, however for now y
   	<dependency>
 	    <groupId>com.github.hulksmashjaxon</groupId>
 	    <artifactId>Rblx-Java-Wrapper</artifactId>
-	    <version>v1.0.0-alpha</version>
+	    <version>v1.0.2-alpha</version>
 	</dependency>
   ```

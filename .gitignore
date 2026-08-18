@@ -7,3 +7,4 @@ build
 .env
 java-rblx-wrapper/bin
 java-rblx-wrapper/src/test
+docs/

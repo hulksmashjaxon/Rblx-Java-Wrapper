@@ -9,6 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     `java-library`
     id("maven-publish")
+    id("org.jetbrains.dokka") version "2.2.0"
 }
 
 repositories {
@@ -49,6 +50,18 @@ publishing {
             from(components["java"])
             groupId = "tech.jxson"
             artifactId = "rblx-java-wrapper"
+        }
+    }
+}
+
+dokka {
+    pluginsConfiguration.html {
+        separateInheritedMembers.set(false)
+        mergeImplicitExpectActualDeclarations.set(false)
+    }
+    dokkaPublications.configureEach {
+        if (name == "html") {
+            outputDirectory.set(rootProject.layout.projectDirectory.dir("docs"))
         }
     }
 }
