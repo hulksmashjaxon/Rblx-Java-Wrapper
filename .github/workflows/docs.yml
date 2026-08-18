@@ -32,7 +32,7 @@ jobs:
       - name: Build Docs
         run: |
           chmod +x ./gradlew
-          ./gradlew :java-rblx-wrapper:dokkaGeneratePublicationHtml
+          ./gradlew dokkaGenerate
 
       - name: Nojekyll
         run: |
