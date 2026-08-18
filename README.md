@@ -45,59 +45,12 @@ API_KEY="12345"
 COOKIE="12345"
 ```
 
-## Installation
+## Installation with JitPack.io
 This library has not yet been made available on Maven Central, however for now you can use JitPack.
-Alternatively, go to [JitPack](https://jitpack.io/#hulksmashjaxon/Rblx-Java-Wrapper) and view the entire process there.
 
-**Step 1:** Add the JitPack repository
-```gradle
-  // settings.gradle
-	dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			mavenCentral()
-			maven { url 'https://jitpack.io' }
-		}
-	}
-  ```
-  ```kts
-  // settings.gradle.kts
-  	dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			mavenCentral()
-			maven { url = uri("https://jitpack.io") }
-		}
-	}
-  ```
-  ```xml
-  <!-- maven (pom.xml) -->
-  	<repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
-  ```
+### Step 1:
+Head over to [JitPack.io](https://jitpack.io/), and enter `hulksmashjaxon/Rblx-Java-Wrapper` into the "Git repo url" field.
 
-  **Step 2:** Add the rblx-java-wrapper dependency
-  ```gradle
-  // .gradle
-  	dependencies {
-	        implementation 'com.github.hulksmashjaxon:Rblx-Java-Wrapper:v1.0.2-alpha'
-	}
-  ```
-  ```kts
-  // .gradle.kts
-    dependencies {
-	        implementation("com.github.hulksmashjaxon:Rblx-Java-Wrapper:v1.0.2-alpha")
-	}
-  ```
-  ```xml
-  <!-- maven (pom.xml) -->
-  	<dependency>
-	    <groupId>com.github.hulksmashjaxon</groupId>
-	    <artifactId>Rblx-Java-Wrapper</artifactId>
-	    <version>v1.0.2-alpha</version>
-	</dependency>
-  ```
+### Step 2:
+Find the latest version, and press "Get it". Select your build file type, and follow the directions there.
+*Note:* If the dependency implementation has :Tag at the end of it, replace :Tag with the latest version (e.g., v1.0.3-alpha)
