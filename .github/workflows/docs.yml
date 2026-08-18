@@ -36,14 +36,14 @@ jobs:
 
       - name: Nojekyll
         run: |
-          mkdir -p java-rblx-wrapper/build/dokka/html
-          touch java-rblx-wrapper/build/dokka/html/.nojekyll
+          mkdir -p build/dokka/html
+          touch build/dokka/html/.nojekyll
 
       - uses: actions/configure-pages@v5
       
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 'java-rblx-wrapper/build/dokka/html/'
+          path: 'build/dokka/html/'
 
       - id: deployment
         uses: actions/deploy-pages@v4
