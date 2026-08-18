@@ -34,6 +34,9 @@ jobs:
           chmod +x ./gradlew
           ./gradlew :java-rblx-wrapper:dokkaGeneratePublicationHtml
 
+      - name: Nojekyll
+        run: touch build/dokka/html/.nojekyll
+
       - uses: actions/configure-pages@v5
       
       - uses: actions/upload-pages-artifact@v3
