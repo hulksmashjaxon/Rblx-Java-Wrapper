@@ -35,13 +35,15 @@ jobs:
           ./gradlew :java-rblx-wrapper:dokkaGeneratePublicationHtml
 
       - name: Nojekyll
-        run: touch build/dokka/html/.nojekyll
+        run: |
+          mkdir -p java-rblx-wrapper/build/dokka/html
+          touch java-rblx-wrapper/build/dokka/html/.nojekyll
 
       - uses: actions/configure-pages@v5
       
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build/dokka/html/'
+          path: 'java-rblx-wrapper/build/dokka/html/'
 
       - id: deployment
         uses: actions/deploy-pages@v4
